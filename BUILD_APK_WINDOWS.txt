@@ -1,0 +1,31 @@
+OLD CROWN DISPLAY v0.5 — BUILDING THE TEST APK ON WINDOWS
+=======================================================
+The project targets Android 6.0+ (minimum API 23).
+
+You need a Windows PC with an internet connection for the first build.
+1. Install Android Studio from https://developer.android.com/studio
+2. Unzip this folder to a short path, e.g. C:\OldCrownDisplayV05
+3. In Android Studio, choose Open and select the unzipped project folder
+   (the directory containing settings.gradle and build.gradle).
+4. Allow Android Studio to install its suggested Android SDK 33,
+   Gradle 7.6.x and Android Gradle Plugin 7.4.2 dependencies.
+   If Android Studio asks to create a Gradle wrapper, allow it.
+   Do not accept an automatic AGP upgrade until the initial build succeeds.
+5. Wait for Gradle sync to complete. Select Build > Build Bundle(s) / APK(s)
+   > Build APK(s) (menu names vary by Android Studio version).
+6. Locate the output: app\build\outputs\apk\debug\app-debug.apk
+7. Transfer app-debug.apk to the Android 6 box and install. Enable
+   Settings > Security > Unknown sources if needed.
+8. Start the app, grant requested storage permissions, and test local media,
+   streams, scrolling ticker and the remote control page on trusted LAN.
+
+IMPORTANT: This ZIP contains SOURCE CODE, NOT A COMPILED APK.
+The APK has NOT been built or hardware-tested in this environment.
+A first build needs access to Gradle, the Android SDK and ExoPlayer 2.18.7.
+
+If Gradle sync complains that the Gradle wrapper is missing, use
+Android Studio's Gradle project import to download/setup its Gradle version,
+or add a Gradle 7.6 wrapper using an existing Gradle installation.
+
+Remote admin uses HTTP Basic auth. Only run it on trusted pub Wi-Fi.
+Do not expose port 8765 to the internet or use it on an untrusted LAN.

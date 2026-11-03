@@ -1,0 +1,23 @@
+OLD CROWN DISPLAY v0.5 - GITHUB-HOSTED APK BUILD
+================================================
+This project builds on GitHub's servers. Your Windows laptop needs only a web browser.
+
+FIRST-TIME SETUP:
+1. Sign in at https://github.com/new and create a PRIVATE repository (e.g. OldCrownDisplay).
+2. Upload the CONTENTS of this extracted folder to the repository root (including the hidden .github/workflows/build-android.yml file). The easiest full-folder upload is using GitHub Desktop, or upload files/folders using the website. The .github folder must be included.
+3. Open the repository -> Actions. If prompted, enable workflows for the repository.
+4. Choose "Build Old Crown Android APK" and select "Run workflow" (or make a commit to main/master to trigger it).
+5. Open the completed run -> Artifacts -> OldCrownDisplay-v0.5-debug-apk.
+6. Extract the downloaded artifact ZIP. Copy app-debug.apk to the Android 6 box and install it.
+
+WHEN UPDATING:
+Commit new source to the repository. GitHub builds automatically for main/master.
+For manual builds, use the Actions > Run workflow button.
+
+NOTES:
+- Uses Google Android SDK API 33, AGP 7.4.2, Gradle 7.6.4, Java 17.
+- App minSdk=23 (Android 6.0); targetSdk=28.
+- DEBUG APK only: suitable for testing, not for public release.
+- No APK is included in this source package. GitHub must successfully finish the build first.
+- If the workflow fails, open its logs; share the failure text for a code fix.
+- The remote web controller uses local-network HTTP Basic authentication; use a trusted Wi-Fi, never port-forward 8765.
