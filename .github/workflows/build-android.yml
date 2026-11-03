@@ -22,11 +22,17 @@ jobs:
           distribution: temurin
           java-version: '17'
 
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
+- name: Check Android SDK
+  run: |
+    echo "Android SDK: $ANDROID_HOME"
+    test -d "$ANDROID_HOME"
+    ls "$ANDROID_HOME/platforms"
 
-      - name: Install Android components
-        run: sdkmanager "platforms;android-33" "build-tools;33.0.2"
+- name: Install required Android components
+  run: |
+    yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" \
+      "platforms;android-33" \
+      "build-tools;33.0.2"
 
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
