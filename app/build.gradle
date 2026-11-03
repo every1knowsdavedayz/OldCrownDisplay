@@ -1,0 +1,18 @@
+plugins { id 'com.android.application' }
+
+android {
+    namespace 'uk.co.nofrills.oldcrowndisplay'
+    compileSdk 33
+    defaultConfig {
+        applicationId 'uk.co.nofrills.oldcrowndisplay'
+        minSdk 23
+        targetSdk 28
+        versionCode 5
+        versionName '0.5'
+    }
+    compileOptions { sourceCompatibility JavaVersion.VERSION_1_8; targetCompatibility JavaVersion.VERSION_1_8 }
+}
+
+dependencies {
+    implementation 'com.google.android.exoplayer:exoplayer:2.18.7'
+}
